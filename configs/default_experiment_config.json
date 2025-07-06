@@ -1,0 +1,239 @@
+{
+      "experiment_name": "ABIDE_Cross_Attention",
+    "description": "Configuration for ABIDE cross-attention experiments",
+  
+  "fmri": {
+    "num_epochs": 50,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "patience": 10,
+    "random_seed": 42,
+    "model_config": {
+      "d_model": 128,
+      "nhead": 8,
+      "num_layers": 4,
+      "dropout": 0.1
+    }
+  },
+  
+  "smri": {
+    "num_epochs": 100,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "patience": 15,
+    "feature_selection_k": 800,
+    "random_seed": 42,
+    "model_config": {
+      "hidden_dims": [512, 256, 128],
+      "dropout": 0.3,
+      "use_batch_norm": true
+    }
+  },
+  
+  "cross_attention": {
+    "num_epochs": 75,
+    "batch_size": 32,
+    "learning_rate": 0.0005,
+    "patience": 12,
+    "random_seed": 42,
+    "model_config": {
+      "d_model": 128,
+      "nhead": 8,
+      "num_layers": 4,
+      "dropout": 0.1
+    }
+  },
+  
+  "fmri_tokenized": {
+    "full_connectivity": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 20,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.2
+      }
+    },
+    "functional_network": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 25,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.2
+      }
+    },
+    "network_based": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 25,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.2
+      }
+    }
+  },
+  
+  "smri_tokenized": {
+    "brain_network": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 10,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 192,
+        "nhead": 6,
+        "num_layers": 2,
+        "dropout": 0.2
+      }
+    },
+    "feature_type": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 10,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.18
+      }
+    },
+    "anatomical_lobe": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 10,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.18
+      }
+    }
+  },
+  
+  "cross_attention_tokenized": {
+    "cross_full_feat": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 12,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.18
+      }
+    },
+    "cross_func_brain": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 12,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.2
+      }
+    },
+    "cross_full_brain": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 12,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.15
+      }
+    },
+    "cross_net_feat": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 12,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.2
+      }
+    },
+    "cross_net_brain": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 12,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.18
+      }
+    },
+    "cross_func_feat": {
+      "num_epochs": 30,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "patience": 12,
+      "random_seed": 42,
+      "model_config": {
+        "d_model": 128,
+        "nhead": 4,
+        "num_layers": 2,
+        "dropout": 0.15
+      }
+    }
+  },
+  
+  "data": {
+    "use_matched_subjects": true,
+    "train_split": 0.7,
+    "val_split": 0.15,
+    "test_split": 0.15,
+    "stratify": true
+  },
+  
+  "validation": {
+    "num_folds": 5,
+    "validation_size": 0.2,
+    "stratified": true
+  },
+  
+  "optimization": {
+    "scheduler": "cosine",
+    "warmup_epochs": 5,
+    "weight_decay": 1e-4,
+    "label_smoothing": 0.1
+  },
+  
+  "logging": {
+    "log_level": "INFO",
+    "save_checkpoints": true,
+    "save_results": true,
+    "plot_training_curves": true
+  }
+} 
